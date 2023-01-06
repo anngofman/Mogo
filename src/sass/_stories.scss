@@ -27,8 +27,8 @@
     display: grid;
     grid-column-gap: 30px;
     padding-top: 40px;
-    grid-template-columns: repeat(3,1fr);
-      grid-template-rows: 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
 
     @media (max-width:1024px) {
       grid-column-gap: 20px;
@@ -67,8 +67,6 @@
           width: 68px;
           height: 68px;
         }
-
-        
 
         .nmb {
           @include font-adaptiv (36, 24);
@@ -121,18 +119,20 @@
           @include font-adaptiv (13, 12);
         }
       }
+
       @media (max-width:320px) {
-        &__heading{
+        &__heading {
           font-size: 18px;
         }
-        &__desc{
+
+        &__desc {
           font-size: 14px;
-        }       
-        .icon span{
+        }
+
+        .icon span {
           font-size: 12px;
-        } 
+        }
       }
     }
   }
-
 }

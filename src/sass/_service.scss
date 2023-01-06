@@ -31,7 +31,6 @@
       details {
         padding-bottom: 20px;
 
-
         .heading {
           margin-left: 30px;
           padding-left: 20px;
@@ -73,9 +72,11 @@
   }
 
   @media (max-width:320px) {
-    & { .title{
-      height: 55px;
-    }
+    & {
+      .title {
+        height: 55px;
+      }
+
       &>p {
         padding: 0 0 40px;
       }
@@ -83,26 +84,25 @@
       height: 980px;
 
       .service__block {
-       
         flex-direction: column;
 
         img {
           width: 100%;
           padding-left: 10px;
         }
-        &-list {width: 100%;
+
+        &-list {
+          width: 100%;
           padding-top: 20px;
-        details .heading{
-          margin-left: 0;
-          padding-left: 0;
-          height: 78px;       
-          font-size: 18px;   
-        }
-        }
 
+          details .heading {
+            margin-left: 0;
+            padding-left: 0;
+            height: 78px;
+            font-size: 18px;
+          }
+        }
       }
-
-
     }
   }
 }
@@ -120,7 +120,6 @@ details summary::after {
   width: 42px;
   position: absolute;
   right: 20px;
-
 }
 
 details[open] summary::after {

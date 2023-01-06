@@ -1,38 +1,8 @@
 @use '../sass/mixin.scss' as *;
 
-
-
-// .menu_mobile {
-//   position: fixed;
-//   display: block;
-//   width: 100%;
-//   height: 100%;
-//   left: -100%;
-//   top: 0;
-//   z-index: 100;
-//   background: blue;
-//   transition: left 1s 1s;
-// }
-
-// .menu_mobile.active {
-//   left: 0;
-//   transition: left 1s;
-// }
-
-// .close-menu {
-//   transform: scale(0);
-//   transition: transform 1s;
-// }
-
-// .close-menu-active {
-//   transform: scale(1);
-//   transition: transform 1s 1s;
-// }
-//huguovuovuvgvgvhbhjbhjbjbjbjbjkbj
-
-.banner__background {
+#background-banner {
   height: 1024px;
-  background-image: url(../image/banner.png);
+  background-image: linear-gradient(rgba(233, 130, 131, 0.9), rgba(237, 215, 137, 0.9)), url(../image/banner.png);
   background-size: cover;
   background-repeat: no-repeat;
 
@@ -45,94 +15,107 @@
   @media (max-width:320px) {
     height: 574px;
   }
+}
+
+.header {
+  background: none;
+  position: relative;
+  width: 100%;
+  height: 9.6%;
+  transition: all 0.3s ease 0s;
+  z-index: 50;
+
+  &>.container {
+    height: 100%;
+  }
 
   &::before {
     content: '';
-    height: 1024px;
-    width: 100%;
     position: absolute;
-    background: linear-gradient(rgba(233, 130, 131, 0.9), rgba(237, 215, 137, 0.9));
-    z-index: 1;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: none;
+    z-index: 3;
+  }
 
-    @media (max-width:1024px) {
-      & {
-        height: 680px;
+  &__body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    position: relative;
+
+    &__logo {
+      flex: 0 0 270px;
+      overflow: hidden;
+
+      img {
+        max-width: 100%;
+        display: block;
       }
     }
 
-    @media (max-width:320px) {
-      height: 574px;
-    }
-  }
-
-  .header {
-    z-index: 2;
-    background: none;
-    position: relative;
-    height: 9.765%;
-    transition: all 0.3s ease 0s;
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-
-    }
-
-    &__body {
+    &-menu {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 100%;
-      padding-top: 20px;
-      position: relative;
       z-index: 5;
+      position: relative;
 
-      &-menu {
+      &>ul {
         display: flex;
 
-        &>ul {
-          display: flex;
+        li {
+          width: 114px;
+          text-transform: uppercase;
+          @include font-adaptiv(14, 13);
+          font-weight: 600;
+          text-align: center;
 
-          li {
-            width: 114px;
-            text-transform: uppercase;
-            @include font-adaptiv(14, 13);
-            font-weight: 600;
+          &:hover {
+            a {
+              color: rgba(244, 191, 135, 1);
+              text-decoration: underline;
+            }
+          }
 
-            @media (max-width:1024px) {
-              & {
-                width: 93px;
-              }
+          @media (max-width:1024px) {
+            & {
+              width: 93px;
             }
           }
         }
+      }
 
-        img:last-child {
-          margin-left: 30px;
-        }
+      img {
+        width: 24px;
+        height: 24px;
+      }
+
+      img:last-child {
+        margin-left: 30px;
       }
     }
   }
+}
 
-  .header_fixed {
-    position: fixed;
-    width: 100vw;
-    background: linear-gradient(rgba(233, 130, 131, 0.9), rgba(237, 215, 137, 0.9));
-    margin: 0 auto;
-    transition: all 0.3s ease 0s;
-    height: 80px;
+.header__logo {
+  z-index: 3;
+}
 
-    ul>li {
-      font-size: 16px;
-      padding-top: 10px;
-    }
-  }
+.header_fixed {
+  position: fixed;
+  width: 100vw;
+  background: linear-gradient(rgba(233, 130, 131, 0.9), rgba(237, 215, 137, 0.9));
+  margin: 0 auto;
+  transition: all 0.3s ease 0s;
+  height: 80px;
+  top: 0;
+}
+
+ul>li {
+  font-size: 16px;
+  padding-top: 10px;
 }
 
 .header__burger {
@@ -140,11 +123,20 @@
 }
 
 @media (max-width:767px) {
+  body.lock {
+    overflow: hidden;
+  }
+
+  .header_fixed {
+    height: 40px;
+  }
+
   .header__burger {
     display: block;
     position: relative;
     width: 30px;
     height: 20px;
+    z-index: 4;
 
     &::before,
     &::after {
@@ -154,7 +146,7 @@
       width: 100%;
       height: 2px;
       left: 0;
-
+      transition: all 0.3s ease 0s;
     }
 
     &::before {
@@ -172,12 +164,56 @@
       height: 2px;
       left: 0;
       top: 9px;
+      transition: all 0.3s ease 0s;
+    }
+
+    &.active::before {
+      transform: rotate(45deg);
+      top: 9px;
+    }
+
+    &.active::after {
+      transform: rotate(-45deg);
+      bottom: 9px;
+    }
+
+    &.active span {
+      transform: scale(0);
     }
   }
 
-  .banner__background {
-    .header__body-menu {
+  .header__body-menu {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(233, 130, 131, 0.9), rgba(237, 215, 137, 0.9)), url(../image/menu.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    transition: all 0.3s ease 0s;
+
+    &.active {
+      top: 0;
+    }
+
+    padding: 80px 0 0 0;
+
+    img {
       display: none;
+    }
+
+    &>ul {
+      flex-direction: column;
+      align-items: center;
+      justify-items: center;
+
+      li {
+        padding: 20px 0;
+        font-size: 18px;
+      }
     }
   }
 }

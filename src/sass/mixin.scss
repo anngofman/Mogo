@@ -6,6 +6,5 @@ $maxWidth: 1510;
   @media (max-width:1510px) {
     font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 1024px) / #{$maxWidth}));
   }
-
 }
 

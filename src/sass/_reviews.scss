@@ -154,10 +154,9 @@
       border-right: 2px solid rgba(198, 203, 205, 1);
       background: none;
       position: absolute;
-      left: -5%;
+      left: 0%;
       top: 45%;
       transform: rotate(225deg);
-
 
       @media (max-width:1024px) {
         & {
@@ -168,7 +167,7 @@
 
     .dot2 {
       top: 45%;
-      left: 105%;
+      left: 100%;
       transform: rotate(45deg);
 
       @media (max-width:1024px) {
@@ -196,16 +195,7 @@
       }
     }
   }
-
-  // @media (max-width:320px) {
-  //   img.slide__img1 {
-  //     display: none;
-  //   }
-  // }
-
 }
-
-
 
 #btn-1:checked~.slider1__content1 .slides1 {
   left: 0;

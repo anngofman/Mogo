@@ -5,15 +5,12 @@
   max-width: 1510px;
   height: 820px;
 
-
   &-card {
     padding-top: 70px;
     display: grid;
     grid-template-columns: repeat(auto-fill, 370px);
     grid-template-rows: 200px 200px;
     grid-column-gap: 30px;
-
-    
 
     &>.card {
       display: flex;
@@ -29,7 +26,6 @@
       .card__text-head {
         @include font-adaptiv(24, 18);
         text-transform: uppercase;
-
       }
 
       .card__text-desc {
@@ -41,41 +37,39 @@
   }
 
   @media (max-width:1024px) {
-    &{
+    & {
       height: 600px;
 
-      &-card{
+      &-card {
         grid-template-rows: 150px 150px;
         grid-template-columns: repeat(auto-fill, 315px);
         grid-column-gap: 20px;
       }
     }
-   
   }
 
   @media (max-width:320px) {
-    &{
+    & {
       height: 1060px;
 
-      &-card{
-        grid-template-rows: repeat(6,100px);
+      &-card {
+        grid-template-rows: repeat(6, 100px);
         grid-template-columns: 1fr;
         grid-row-gap: 20px;
+
         .card img {
           width: 60px;
-      }
+        }
 
-      .card .card__text-head {
-        font-size: 18px;
+        .card .card__text-head {
+          font-size: 18px;
+        }
 
-      }
-
-      .card .card__text-desc {
-        font-size: 14px;
-        padding-top: 25px;
+        .card .card__text-desc {
+          font-size: 14px;
+          padding-top: 25px;
+        }
       }
     }
-   
   }
-}
 }

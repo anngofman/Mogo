@@ -45,7 +45,6 @@
         &>hr {
           width: 70px;
           margin: 32px 0;
-
         }
 
         .desc {
@@ -55,7 +54,6 @@
         }
       }
     }
-
   }
 
   @media (max-width:1024px) {
@@ -74,21 +72,16 @@
           align-items: flex-start;
           display: flex;
 
-
           .feedback {
             padding-left: 40px;
-
 
             .name {
               padding: 5px 0;
             }
 
             &>hr {
-
               margin: 20px 0;
-
             }
-
           }
         }
       }
@@ -128,7 +121,6 @@
 
             .post {
               font-size: 14px;
-
             }
 
             &>hr {
@@ -139,7 +131,6 @@
               font-size: 14px;
               padding: 0;
             }
-
           }
         }
       }
