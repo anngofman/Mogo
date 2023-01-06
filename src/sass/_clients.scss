@@ -1,0 +1,148 @@
+@use '../sass/mixin.scss' as *;
+
+.clients {
+  height: 925px;
+  text-align: center;
+  max-width: 1510px;
+  background: url(../image/clients-banner.png), rgba(255, 255, 255, 0.9);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: overlay;
+  margin: 0 auto;
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 285px);
+    grid-row-gap: 40px;
+    grid-column-gap: 50px;
+    padding-top: 40px;
+
+    .card {
+      display: flex;
+      align-items: flex-start;
+
+      img {
+        max-width: 130px;
+      }
+
+      .feedback {
+        padding-left: 50px;
+        text-align: left;
+
+        .name {
+          text-transform: uppercase;
+          @include font-adaptiv (24, 18);
+          padding: 10px 0;
+        }
+
+        .post {
+          @include font-adaptiv (18, 14);
+          font-weight: 400;
+          text-transform: uppercase;
+        }
+
+        &>hr {
+          width: 70px;
+          margin: 32px 0;
+
+        }
+
+        .desc {
+          font-weight: 400;
+          padding-top: 20px;
+          @include font-adaptiv (18, 14);
+        }
+      }
+    }
+
+  }
+
+  @media (max-width:1024px) {
+    & {
+      height: 625px;
+
+      hr {
+        margin: 0 auto;
+      }
+
+      &__cards {
+        grid-template-rows: repeat(2, 194px);
+        grid-row-gap: 25px;
+
+        .card {
+          align-items: flex-start;
+          display: flex;
+
+
+          .feedback {
+            padding-left: 40px;
+
+
+            .name {
+              padding: 5px 0;
+            }
+
+            &>hr {
+
+              margin: 20px 0;
+
+            }
+
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width:320px) {
+    & {
+      height: 1510px;
+
+      hr {
+        margin: 0 auto;
+      }
+
+      &__cards {
+        grid-template-rows: repeat(4, 310px);
+        grid-template-columns: 1fr;
+        grid-row-gap: 10px;
+
+        .card {
+          align-items: center;
+          display: flex;
+          flex-direction: column;
+
+          img {
+            width: 90px;
+          }
+
+          .feedback {
+            padding-left: 0;
+            text-align: center;
+
+            .name {
+              padding: 20px 0 10px 0;
+              font-size: 18px;
+            }
+
+            .post {
+              font-size: 14px;
+
+            }
+
+            &>hr {
+              margin: 20px auto;
+              width: 50%;
+            }
+            .desc{
+              font-size: 14px;
+              padding: 0;
+            }
+
+          }
+        }
+      }
+    }
+  }
+}

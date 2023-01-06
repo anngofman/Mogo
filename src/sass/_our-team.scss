@@ -1,0 +1,117 @@
+@use '../sass/mixin.scss' as *;
+
+.our-team {
+  height: 1060px;
+  text-align: center;
+  padding-top: 30px;
+  max-width: 1510px;
+
+  &>p {
+    padding-top: 20px;
+  }
+
+  &__card {
+    padding-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 30px;
+
+    .card {
+      text-transform: uppercase;
+
+      &>p.name {
+        @include font-adaptiv(24, 18);
+        padding-top: 25px;
+        padding-bottom: 25px;
+      }
+
+      &>p.post {
+        font-weight: 400;
+      }
+
+      #backgroung_social {
+
+        display: block;
+        position: relative;
+
+        @media (max-width:320px) {
+          width: 288px;
+          height: 235px;
+
+          &>img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+
+        &>img {
+          position: relative;
+          display: block;
+          max-width: 100%;
+        }
+
+        .card__social {
+          position: absolute;
+          display: block;
+          bottom: 16px;
+          left: -16px;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(rgba(233, 130, 131, 0.9), rgba(237, 215, 137, 0.9));
+          opacity: 0;
+          transition: all 0.7s ease-in-out;
+          color: #fff;
+          text-align: center;
+          padding-top: 200px;
+        }
+
+        &:hover .card__social {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  @media (max-width:1024px) {
+    & {
+      height: 850px;
+      padding-top: 0;
+
+      &__card {
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 20px;
+        padding-top: 50px;
+      }
+    }
+  }
+
+  @media (max-width:320px) {
+    & {
+      height: 1370px;
+
+      &__card {
+        padding-top: 40px;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        grid-row-gap: 20px;
+
+        .card {
+          &>p.name {
+            font-size: 18px;
+            padding: 10px 0 20px 0;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width:320px) {
+    & {
+      hr {
+        margin: 0 auto;
+      }
+    }
+  }
+}

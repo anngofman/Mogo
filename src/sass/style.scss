@@ -1,0 +1,62 @@
+@use 'let';
+@import url(../fonts/font.scss);
+@import url(./_header.scss);
+@import url(./_banner.scss);
+@import url(./_about.scss);
+@import url(./_futures.scss);
+@import url(./_amazing-services.scss);
+@import url(./_devices.scss);
+@import url(./_service.scss);
+@import url(./_reviews.scss);
+@import url(./_our-team.scss);
+@import url(./_partners.scss);
+@import url(./_work.scss);
+@import url(./_reviews2.scss);
+@import url(./_clients.scss);
+@import url(./_stories.scss);
+@import url(./_map.scss);
+@import url(./footer.scss);
+@import url(./mixin.scss);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  max-width: 100%;
+  max-height: 100%;
+ 
+    @media (max-width:320px) {
+      &{
+        font-size: 14px;
+      }
+    }
+  }
+
+
+.container {
+  max-width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+li {
+  list-style: none;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+

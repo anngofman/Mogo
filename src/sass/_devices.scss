@@ -1,0 +1,77 @@
+.devices {
+  height: 870px;
+  background: url(../image/device-banner.png), rgba(255, 255, 255, 0.8);
+  background-blend-mode: overlay;
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  max-width: 1510px;
+  margin-left: auto;
+  margin-right: auto;
+
+  &__technology {
+    
+    padding-top: 40px;
+    height: 525px;
+    position: relative;
+
+
+    &-tablet {
+      border: 20px solid #000;
+      border-radius: 30px;
+      height: 100%;
+      
+    }
+
+    &-mobile {
+      position: absolute;
+      top: 50%;
+    left: 65%;
+    }
+
+  }
+
+  @media (max-width:1024px) {
+    & {
+      height: 590px;
+
+    }
+    
+    &__technology {
+      height: 360px;
+      padding-top: 0;
+
+      &-tablet{
+        border: 12px solid #000;
+      }
+      &-mobile{
+        width: 135px;
+        // top: 152px;
+        // left: 632px;
+      }
+    }
+  }
+
+  @media (max-width:320px) {
+    & {
+      height: 514px;
+      .title{
+        height: 50px;
+        font-size: 36px;
+      }
+
+    }
+    
+    &__technology {
+padding-top: 30px;
+      height: 219px;
+      &-tablet{
+        border: 7px     solid #000;
+      }
+      &-mobile{
+        width: 85px;
+        
+      }
+    }
+  }
+}

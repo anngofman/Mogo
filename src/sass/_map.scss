@@ -1,0 +1,47 @@
+@use '../sass/mixin.scss' as *;
+
+.map {
+  height: 230px;
+  background: url(../image/map-banner.png), rgba(255, 255, 255, 0.9);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: overlay;
+  text-align: center;
+  color: rgba(243, 130, 129, 1);
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (max-width:1024px) {
+    height: 155px;
+  }
+  @media (max-width:320px) {
+    height: 230px;
+  }
+
+  &>.container {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+
+    img {
+      max-width: 42px;
+      @media (max-width:1024px) {
+        width: 28px;
+      }
+      @media (max-width:320px) {
+        width: 42px;
+      }
+    }
+
+    p {
+      @include font-adaptiv(36, 24);
+      font-weight: 900;
+      text-transform: uppercase;
+      @media (max-width:320px) {
+       font-size: 24px;
+      }
+    }
+  }
+}

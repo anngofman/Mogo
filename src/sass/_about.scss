@@ -1,0 +1,97 @@
+@use '../sass/mixin.scss' as *;
+
+
+.title {
+  font-weight: 900;
+  @include font-adaptiv(36, 24);
+  text-transform: uppercase;
+  height: 80px;
+  margin: 24px 0 0;
+  padding: 20px;
+
+  @media (max-width:320px) {
+    & {
+      font-size: 24px;
+      padding: 0;
+    }
+  }
+}
+
+
+.desc {
+  margin-top: 15px;
+  font-weight: 400;
+}
+
+.about {
+  text-align: center;
+  height: 850px;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  max-width: 1510px;
+
+  .super-team {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 30px;
+    padding-top: 60px;
+
+    #background {
+      display: block;
+      position: relative;
+
+
+      .card__img {
+        width: 100%;
+        display: block;
+        position: relative;
+      }
+
+      .card__text {
+        position: absolute;
+        display: block;
+        bottom: 16px;
+        left: -16px;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(rgba(233, 130, 131, 0.9), rgba(237, 215, 137, 0.9));
+        opacity: 0;
+        transition: all 0.7s ease-in-out;
+        color: #fff;
+        text-align: center;
+        padding-top: 125px;
+      }
+
+      &:hover .card__text {
+        opacity: 1;
+      }
+    }
+
+    .card__text-head {
+      font-weight: 500;
+      @include font-adaptiv (24, 18);
+    }
+  }
+
+  @media (max-width:1024px) {
+    & {
+      height: 670px;
+    }
+  }
+
+  @media (max-width:320px) {
+    & {
+      height: 1200px;
+
+      .super-team {
+        padding-top: 30px;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 3fr);
+        grid-row-gap: 16px;
+      }
+    }
+  }
+}
