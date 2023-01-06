@@ -41,6 +41,10 @@
         text-align: center;
         padding-top: 100px;
 
+        @media (max-width:1024px) {
+          padding-top: 50px;
+        }
+
         &-heading {
           @include font-adaptiv(24, 18);
           text-transform: uppercase;
